@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <html>
     <head>
         <title>Demo HelloWorld (com JSP)</title>
@@ -11,6 +12,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div>
+            <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand p-2 h1">Aplicativo HelloWorld</span>
+            </nav>
+        </div>
         <h1>Preencha o formulário:</h1>
            <form action="sayhello.jsp" method="post">
            <br>Idioma preferido: <input type="radio" name="lang" value="pt" checked> Português
@@ -23,3 +29,4 @@ and open the template in the editor.
 
     </body>
 </html>
+<script src="js/bootstrap.min.js"></script>
