@@ -10,6 +10,10 @@ package hello;
 import java.beans.*;
 import java.io.Serializable;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 /**
  *
  * @author viter
@@ -20,6 +24,7 @@ public class MessageBean implements Serializable {
     private String lang;
     private String msg;
     private String msg2;
+    private DateTime dt = new DateTime(); 
         
     public MessageBean() {
     }
@@ -31,16 +36,41 @@ public class MessageBean implements Serializable {
     public void setLang(String value) {
         lang = value;
     }
+
     public String getMsg() {
         switch (this.lang){
             case "pt":
-                return "Alô";
+                if ((dt.getHourOfDay() >= 5) && (dt.getHourOfDay() <= 11)) {
+                    return "Bom dia";
+                } else if (dt.getHourOfDay() >= 12 && dt.getHourOfDay() < 19) {
+                    return "Boa tarde";
+                } else {
+                    return "Boa noite";
+                }
             case "en":
-                return "Hello";
+                if ((dt.getHourOfDay() >= 5) && (dt.getHourOfDay() <= 11)) {
+                    return "Good morning";
+                } else if (dt.getHourOfDay() >= 12 && dt.getHourOfDay() < 19) {
+                    return "Good afternoon";
+                } else {
+                    return "Good night";
+                }
             case "de":
-                return "Hallo";
+                if ((dt.getHourOfDay() >= 5) && (dt.getHourOfDay() <= 11)) {
+                    return "Guten Morgen";
+                } else if (dt.getHourOfDay() >= 12 && dt.getHourOfDay() < 19) {
+                    return "Guten Tag";
+                } else {
+                    return "Guten Nacht";
+                }
             case "fr":
-                return "Bonjour";
+                if ((dt.getHourOfDay() >= 5) && (dt.getHourOfDay() <= 11)) {
+                    return "Bonjour";
+                } else if (dt.getHourOfDay() >= 12 && dt.getHourOfDay() < 19) {
+                    return "Bonne aprés-midi";
+                } else {
+                    return "Bonne nuit";
+                }
         }
         return "";
     }
