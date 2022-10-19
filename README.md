@@ -1,1 +1,1 @@
-Link para o Heroku: https://git.heroku.com/hidden-earth-18349.git
+Link para o Heroku: https://hidden-earth-18349.herokuapp.com/
