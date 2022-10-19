@@ -14,14 +14,16 @@
     </head>
     <body>
         <jsp:useBean id="myBean" class="hello.MessageBean"/>
-        <header>
-            <h1>Aplicativo HelloWorld</h1>
+        <header class="header">
+            <h1>header</h1>
         </header>
+        <h1>Aplicativo HelloWorld</h1>
         <% String lang = request.getParameter("lang"); %>
         <h2><jsp:setProperty name="myBean" property="lang" value="<%=lang%>"/>
         <jsp:getProperty name="myBean" property="msg"/>, <%=request.getParameter("nome")%>!</h2>
+        <jsp:getProperty name="myBean" property="msg2"/> <jsp:getProperty name="myBean" property="aut"/>
         <footer>
-            <jsp:getProperty name="myBean" property="msg2"/> <jsp:getProperty name="myBean" property="aut"/>
+            <h1>footer</h1>
         </footer>
     </body>
 </html>
